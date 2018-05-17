@@ -1,4 +1,4 @@
 # totalvoice-csharp
-Cliente em C# para a API da TotalVoice
+Client em C# para a API da TotalVoice
 
 ## EM CONSTRUÇÃO AGUARDE!
