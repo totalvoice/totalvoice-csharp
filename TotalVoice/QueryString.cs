@@ -5,6 +5,6 @@ namespace TotalVoice
 {
     public class QueryString
     {
-        private Dictionary<string, Object> query;
+        private Dictionary<string, Object> Query;
     }
 }
