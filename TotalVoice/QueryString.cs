@@ -7,14 +7,14 @@ namespace TotalVoice
 {
     public class QueryString
     {
-        private Dictionary<string, Object> Query;
+        private Dictionary<string, dynamic> Query;
 
         public QueryString()
         {
-            Query = new Dictionary<string, Object>();
+            Query = new Dictionary<string, dynamic>();
         }
 
-        public void Add(string Key, Object Value)
+        public void Add(string Key, dynamic Value)
         {
             Query.Add(Key, Value);
         }

@@ -4,12 +4,11 @@
     {
         private Path Path;
         private QueryString Query;
+        private IParameters Parameters;
 
-        public Path GetPath()
-        {
-            return Path;
-        }
-
+        public Request() {}
+        public Request(IParameters parameters) => Parameters = parameters;
+        
         public string GetPathString()
         {
             if (Path == null)
@@ -18,12 +17,7 @@
             }
             return Path.GetPathString();
         }
-
-        public QueryString GetQuery()
-        {
-            return Query;
-        }
-
+        
         public string GetQueryString()
         {
             if (Query == null || Query.IsEmpty())
@@ -38,7 +32,12 @@
             return (GetPathString() + GetQueryString()).Trim();
         }
 
-        public void SetPath(Path path) => this.Path = path;
+        public string GetData()
+        {
+            return Parameters.Serialize();
+        }
+
+        public void SetPath(Path path) => Path = path;
 
         public void SetQuery(QueryString query) => Query = query;
     }

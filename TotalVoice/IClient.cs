@@ -2,7 +2,7 @@
 {
     public interface IClient
     {
-        void Get();
+        string Get(IRequest request);
 
         void Post();
 

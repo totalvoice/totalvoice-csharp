@@ -5,14 +5,14 @@ namespace TotalVoice
 {
     public class Path
     {
-        private readonly List<Object> Paths;
+        private readonly List<dynamic> Paths;
 
         public Path()
         {
-            Paths = new List<object>();
+            Paths = new List<dynamic>();
         }
 
-        public void Add(Object Value)
+        public void Add(dynamic Value)
         {
             Paths.Add(Value);
         }
