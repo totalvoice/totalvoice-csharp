@@ -1,5 +1,5 @@
 # totalvoice-csharp
-Client em C# para a API da TotalVoice
+Client C# para a API da TotalVoice
 
 > ### Pré requisitos
 
