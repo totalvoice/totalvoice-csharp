@@ -5,14 +5,14 @@ namespace TotalVoice
 {
     public class Path
     {
-        private readonly List<dynamic> Paths;
+        private readonly List<object> Paths;
 
         public Path()
         {
-            Paths = new List<dynamic>();
+            Paths = new List<object>();
         }
 
-        public void Add(dynamic Value)
+        public void Add(object Value)
         {
             Paths.Add(Value);
         }
@@ -22,7 +22,7 @@ namespace TotalVoice
             string spath = "";
             for (int i = 0; i < Paths.Count; i++)
             {
-                spath += "/" + Paths[i];
+                spath = spath + "/" + Paths[i];
             }
             return spath;
         }

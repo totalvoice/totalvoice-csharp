@@ -30,10 +30,7 @@ namespace TotalVoice
             this.BaseUrl = BaseUrl;
         }
 
-        public string Get(IRequest request)
-        {
-            return SendRequest(request, "GET");
-        }
+        public string Get(IRequest request) => SendRequest(request, "GET");
 
         public string Post(IRequest request)
         {
@@ -50,7 +47,7 @@ namespace TotalVoice
             throw new NotImplementedException();
         }
 
-        private dynamic SendRequest(IRequest req, String method)
+        private string SendRequest(IRequest req, string method)
         {
             WebRequest request = WebRequest.Create(BaseUrl + req.GetURL());
             request.Method = method;
@@ -96,7 +93,7 @@ namespace TotalVoice
             resStream.Close();
             response.Close();
 
-            return JsonConvert.DeserializeObject(responseFromServer);
+            return JsonConvert.DeserializeObject(responseFromServer).ToString();
         }
     }
 }
