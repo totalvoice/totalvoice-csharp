@@ -35,17 +35,17 @@ namespace TotalVoice
             return SendRequest(request, "GET");
         }
 
-        public void Post()
+        public string Post(IRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public void Put()
+        public string Put(IRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public string Delete(IRequest request)
         {
             throw new NotImplementedException();
         }

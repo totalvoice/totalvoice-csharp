@@ -12,11 +12,13 @@ namespace TotalVoice.Api
         {
         }
 
-        public void Enviar(IParameters parameters)
+        public string Enviar(IParameters parameters)
         {
-            Request req = new Request();
-            
-            //return Client.Get(parameters);
+            Path path = new Path();
+            path.Add(ROTA_SMS);
+
+            _request.SetPath(path);
+            return _client.Post(_request);
         }
 
         public string Buscar(int id)

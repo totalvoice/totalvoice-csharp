@@ -4,10 +4,10 @@
     {
         string Get(IRequest request);
 
-        void Post();
+        string Post(IRequest request);
 
-        void Put();
+        string Put(IRequest request);
 
-        void Delete();
+        string Delete(IRequest request);
     }
 }
