@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TotalVoice.Api
+﻿namespace TotalVoice.Api
 {
     public class Sms : Api
     {
@@ -21,11 +17,21 @@ namespace TotalVoice.Api
             return _client.Post(_request);
         }
 
-        public string Buscar(int id)
+        public string Buscar(int Id)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
-            path.Add(id);
+            path.Add(Id);
+
+            _request.SetPath(path);
+            return _client.Get(_request);
+        }
+
+        public string Relatorio(IParameters parameters)
+        {
+            Path path = new Path();
+            path.Add(ROTA_SMS);
+            path.Add("relatorio");
 
             _request.SetPath(path);
             return _client.Get(_request);
