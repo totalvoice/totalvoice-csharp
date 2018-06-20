@@ -2,12 +2,11 @@
 {
     public class Request : IRequest
     {
-        private Path Path;
-        private QueryString Query;
-        private IParameters Parameters;
+        Path Path;
+        QueryString Query;
+        string Body;
 
         public Request() {}
-        public Request(IParameters parameters) => Parameters = parameters;
         
         public string GetPathString()
         {
@@ -32,13 +31,15 @@
             return (GetPathString() + GetQueryString()).Trim();
         }
 
-        public string GetData()
+        public string GetBody()
         {
-            return Parameters.Serialize();
+            return Body;
         }
 
         public void SetPath(Path path) => Path = path;
 
         public void SetQuery(QueryString query) => Query = query;
+
+        public void SetBody(string data) => Body = data;
     }
 }

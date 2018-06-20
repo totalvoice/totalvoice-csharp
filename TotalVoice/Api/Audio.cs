@@ -1,17 +1,17 @@
 ﻿namespace TotalVoice.Api
 {
-    public class Tts : Api
+    public class Audio : Api
     {
-        public const string ROTA_TTS = "tts";
+        public const string ROTA_AUDIO = "audio";
 
-        public Tts(TotalVoiceClient Client) : base(Client)
+        public Audio(TotalVoiceClient Client) : base(Client)
         {
         }
 
         public string Enviar(string data)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_AUDIO);
 
             _request.SetPath(path);
             _request.SetBody(data);
@@ -21,7 +21,7 @@
         public string Buscar(int Id)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_AUDIO);
             path.Add(Id);
 
             _request.SetPath(path);
@@ -31,7 +31,7 @@
         public string Relatorio(string data)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_AUDIO);
             path.Add("relatorio");
 
             _request.SetPath(path);

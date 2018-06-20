@@ -8,13 +8,14 @@
         {
         }
 
-        public string Enviar(IParameters parameters)
+        public string Enviar(string data)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
 
             _request.SetPath(path);
-            return _client.Post(_request);
+            _request.SetBody(data);
+            return _client.SendRequest(_request, "POST");
         }
 
         public string Buscar(int Id)
@@ -24,17 +25,17 @@
             path.Add(Id);
 
             _request.SetPath(path);
-            return _client.Get(_request);
+            return _client.SendRequest(_request, "GET");
         }
 
-        public string Relatorio(IParameters parameters)
+        public string Relatorio(string data)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
             path.Add("relatorio");
 
             _request.SetPath(path);
-            return _client.Get(_request);
+            return _client.SendRequest(_request, "GET");
         }
     }
 }

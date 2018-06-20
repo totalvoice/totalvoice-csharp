@@ -30,32 +30,15 @@ namespace TotalVoice
             this.BaseUrl = BaseUrl;
         }
 
-        public string Get(IRequest request) => SendRequest(request, "GET");
-
-        public string Post(IRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Put(IRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Delete(IRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        private string SendRequest(IRequest req, string method)
+        public string SendRequest(IRequest req, string method)
         {
             WebRequest request = WebRequest.Create(BaseUrl + req.GetURL());
             request.Method = method;
-            request.Headers.Add("Content-Type", "application/json");
+            request.ContentType = "application/json";
             request.Headers.Add("Access-Token", AccessToken);
-            if (req.GetData() != null)
+            if (req.GetBody() != null)
             {
-                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(req.GetData());
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(req.GetBody());
 
                 request.ContentLength = bytes.Length;
                 Stream reqStream = request.GetRequestStream();

@@ -12,6 +12,8 @@
 
         string GetQueryString();
 
-        string GetData();
+        void SetBody(string data);
+
+        string GetBody();
     }
 }
