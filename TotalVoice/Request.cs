@@ -1,4 +1,6 @@
-﻿namespace TotalVoice
+﻿using Newtonsoft.Json;
+
+namespace TotalVoice
 {
     public class Request : IRequest
     {
@@ -40,6 +42,9 @@
 
         public void SetQuery(QueryString query) => Query = query;
 
-        public void SetBody(string data) => Body = data;
+        public void SetBody(dynamic data)
+        {
+            Body = JsonConvert.SerializeObject(data);
+        }
     }
 }

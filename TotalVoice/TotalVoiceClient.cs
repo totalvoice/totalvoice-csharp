@@ -63,7 +63,6 @@ namespace TotalVoice
                 if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)
                 {
                     response = (HttpWebResponse)ex.Response;
-
                 }
             }
 

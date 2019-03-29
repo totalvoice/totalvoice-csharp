@@ -1,4 +1,6 @@
-﻿namespace TotalVoice.Api
+﻿using System;
+
+namespace TotalVoice.Api
 {
     public class Sms : Api
     {
@@ -8,7 +10,7 @@
         {
         }
 
-        public string Enviar(string data)
+        public string Enviar(dynamic data)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
@@ -28,13 +30,19 @@
             return _client.SendRequest(_request, "GET");
         }
 
-        public string Relatorio(string data)
+        public string Relatorio(DateTime DataInicial, DateTime DataFinal, dynamic Fitros = null)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
             path.Add("relatorio");
 
+            QueryString query = new QueryString();
+            query.Add("data_inicio", DataInicial.ToString());
+            query.Add("data_fim", DataFinal.ToString());
+
             _request.SetPath(path);
+            _request.SetQuery(query);
+
             return _client.SendRequest(_request, "GET");
         }
     }

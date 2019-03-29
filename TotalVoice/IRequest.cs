@@ -12,7 +12,7 @@
 
         string GetQueryString();
 
-        void SetBody(string data);
+        void SetBody(dynamic data);
 
         string GetBody();
     }
