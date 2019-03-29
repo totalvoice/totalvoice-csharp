@@ -10,13 +10,13 @@ namespace TotalVoice.Api
         {
         }
 
-        public string Enviar(dynamic data)
+        public string Enviar(dynamic Data)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
 
             _request.SetPath(path);
-            _request.SetBody(data);
+            _request.SetBody(Data);
             return _client.SendRequest(_request, "POST");
         }
 
