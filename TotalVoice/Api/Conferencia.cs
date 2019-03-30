@@ -2,6 +2,9 @@
 
 namespace TotalVoice.Api
 {
+    /// <summary>
+    /// Conferencia class
+    /// </summary>
     public class Conferencia : Api
     {
         public const string ROTA_CONFERENCIA = "conferencia";

@@ -48,7 +48,7 @@ namespace TotalVoice.Api
 
             _request.SetPath(path);
             _request.SetBody(Data);
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, POST);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace TotalVoice.Api
             path.Add(Id);
 
             _request.SetPath(path);
-            return _client.SendRequest(_request, "GET");
+            return _client.SendRequest(_request, GET);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace TotalVoice.Api
             _request.SetPath(path);
             _request.SetQuery(query);
 
-            return _client.SendRequest(_request, "GET");
+            return _client.SendRequest(_request, GET);
         }
     }
 }

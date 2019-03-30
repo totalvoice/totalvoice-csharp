@@ -34,7 +34,7 @@ namespace TotalVoice.Api
 
             _request.SetPath(path);
             _request.SetBody(Data);
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, POST);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace TotalVoice.Api
 
             _request.SetPath(path);
 
-            return _client.SendRequest(_request, "DELETE");
+            return _client.SendRequest(_request, DELETE);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace TotalVoice.Api
             path.Add(Id);
 
             _request.SetPath(path);
-            return _client.SendRequest(_request, "GET");
+            return _client.SendRequest(_request, GET);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace TotalVoice.Api
             path.Add("gravacao");
 
             _request.SetPath(path);
-            return _client.SendRequest(_request, "GET");
+            return _client.SendRequest(_request, GET);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace TotalVoice.Api
             _request.SetPath(path);
             _request.SetQuery(query);
 
-            return _client.SendRequest(_request, "GET");
+            return _client.SendRequest(_request, GET);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace TotalVoice.Api
             _request.SetPath(path);
             _request.SetBody(new { numero = Numero, modo = Modo });
 
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, POST);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace TotalVoice.Api
             _request.SetPath(path);
             _request.SetBody(new { numero = Numero, perna = Perna });
 
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, POST);
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace TotalVoice.Api
             _request.SetPath(path);
             _request.SetBody(new { nota = Nota, comentario = Comentario });
 
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, POST);
         }
     }
 }
