@@ -21,10 +21,11 @@ namespace TotalVoice.Api
         // Ex: 
         // var Data = new {
         //    numero_destino   = "48988888888",
-        //    url_audio        = "Testando TTS",
+        //    url_audio        = "http://foooo.bar/audio.mp3",
         //    resposta_usuario = false,
         //    gravar_audio     = false,
-        //    bina             = "48988888888"
+        //    bina             = "48988888888",
+        //    detecta_caixa    = false
         // };
         /// 
         public string Enviar(dynamic Data)
