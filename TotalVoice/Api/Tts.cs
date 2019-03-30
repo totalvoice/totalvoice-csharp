@@ -1,5 +1,10 @@
-﻿namespace TotalVoice.Api
+﻿using System;
+
+namespace TotalVoice.Api
 {
+    /// <summary>
+    /// SMS Class
+    /// </summary>
     public class Tts : Api
     {
         public const string ROTA_TTS = "tts";
@@ -8,16 +13,32 @@
         {
         }
 
-        public string Enviar(string data)
+        /// <summary>
+        /// Envia um TTS (text-to-speach) para um número destino
+        /// </summary>
+        /// <param name="Data">Estrutura enviada para o Post.</param>
+        /// 
+        // Ex: 
+        // var json = new {
+        //    numero_destino = "48988888888",
+        //    mensagem = "Testando TTS"
+        // };
+        /// 
+        public string Enviar(dynamic Data)
         {
             Path path = new Path();
             path.Add(ROTA_TTS);
 
             _request.SetPath(path);
-            _request.SetBody(data);
+            _request.SetBody(Data);
             return _client.SendRequest(_request, "POST");
         }
 
+        /// <summary>
+        /// Busca um TTS pelo seu ID
+        /// </summary>
+        /// <param name="Id">ID do TTS.</param>
+        /// 
         public string Buscar(int Id)
         {
             Path path = new Path();
@@ -28,13 +49,31 @@
             return _client.SendRequest(_request, "GET");
         }
 
-        public string Relatorio(string data)
+        /// <summary>
+        /// Relatorio de envio de TTS
+        /// </summary>
+        /// <param name="DataInicial">Periodo inicial para a consulta</param>
+        /// <param name="DataFinal">Periodo final para a consulta.</param>
+        /// <param name="Filtros">Filtros adicionais que podem ser enviados.</param>
+        /// 
+        public string Relatorio(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
         {
             Path path = new Path();
             path.Add(ROTA_TTS);
             path.Add("relatorio");
 
+            QueryString query = new QueryString();
+            query.Add("data_inicio", DataInicial.ToString());
+            query.Add("data_fim", DataFinal.ToString());
+
+            if (Filtros != null)
+            {
+                Filtros.Merge(ref query);
+            }
+
             _request.SetPath(path);
+            _request.SetQuery(query);
+
             return _client.SendRequest(_request, "GET");
         }
     }
