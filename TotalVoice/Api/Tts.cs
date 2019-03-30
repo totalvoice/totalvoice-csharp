@@ -19,9 +19,9 @@ namespace TotalVoice.Api
         /// <param name="Data">Estrutura enviada para o Post.</param>
         /// 
         // Ex: 
-        // var json = new {
+        // var Data = new {
         //    numero_destino = "48988888888",
-        //    mensagem = "Testando TTS"
+        //    mensagem       = "Testando TTS"
         // };
         /// 
         public string Enviar(dynamic Data)
