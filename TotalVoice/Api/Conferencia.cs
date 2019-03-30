@@ -80,13 +80,41 @@ namespace TotalVoice.Api
         }
 
         /// <summary>
-        /// Relatorio de chamadas em Conferencia
+        /// Relatorio de Conferencia criadas
         /// </summary>
         /// <param name="DataInicial">Periodo inicial para a consulta</param>
         /// <param name="DataFinal">Periodo final para a consulta.</param>
         /// <param name="Filtros">Filtros adicionais que podem ser enviados.</param>
         /// 
         public string Relatorio(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
+        {
+            Path path = new Path();
+            path.Add(ROTA_CONFERENCIA);
+            path.Add("relatorio");
+
+            QueryString query = new QueryString();
+            query.Add("data_inicio", DataInicial.ToString());
+            query.Add("data_fim", DataFinal.ToString());
+
+            if (Filtros != null)
+            {
+                Filtros.Merge(ref query);
+            }
+
+            _request.SetPath(path);
+            _request.SetQuery(query);
+
+            return _client.SendRequest(_request, "GET");
+        }
+
+        /// <summary>
+        /// Relatorio de chamadas em Conferencia
+        /// </summary>
+        /// <param name="DataInicial">Periodo inicial para a consulta</param>
+        /// <param name="DataFinal">Periodo final para a consulta.</param>
+        /// <param name="Filtros">Filtros adicionais que podem ser enviados.</param>
+        /// 
+        public string RelatorioChamadas(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
         {
             Path path = new Path();
             path.Add(ROTA_CONFERENCIA);
