@@ -9,9 +9,8 @@ namespace TotalVoice.Api
     {
         public const string ROTA_AUDIO = "audio";
 
-        public Audio(TotalVoiceClient Client) : base(Client)
-        {
-        }
+        public Audio(IClient client) : base(client) { }
+        public Audio(IClient client, IRequest request) : base(client, request) { }        
 
         /// <summary>
         /// Envia um audio para um número destino

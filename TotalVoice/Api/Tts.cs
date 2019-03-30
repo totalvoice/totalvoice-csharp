@@ -9,9 +9,8 @@ namespace TotalVoice.Api
     {
         public const string ROTA_TTS = "tts";
 
-        public Tts(TotalVoiceClient Client) : base(Client)
-        {
-        }
+        public Tts(IClient Client) : base(Client) { }
+        public Tts(IClient client, IRequest request) : base(client, request) { }
 
         /// <summary>
         /// Envia um TTS (text-to-speach) para um número destino

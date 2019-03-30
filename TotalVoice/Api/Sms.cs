@@ -9,9 +9,8 @@ namespace TotalVoice.Api
     {
         public const string ROTA_SMS = "sms";
 
-        public Sms(TotalVoiceClient Client) : base(Client)
-        {
-        }
+        public Sms(IClient Client) : base(Client) { }
+        public Sms(IClient client, IRequest request) : base(client, request) { }
 
         /// <summary>
         /// Envia um sms para um número destino
