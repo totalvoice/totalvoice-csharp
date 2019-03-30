@@ -61,7 +61,7 @@ namespace TotalVoice.Api
 
             _request.SetPath(path);
             _request.SetBody(Data);
-            return _client.SendRequest(_request, "POST");
+            return _client.SendRequest(_request, "PUT");
         }
 
         /// <summary>
