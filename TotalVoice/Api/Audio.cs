@@ -10,7 +10,7 @@ namespace TotalVoice.Api
         public const string ROTA_AUDIO = "audio";
 
         public Audio(IClient client) : base(client) { }
-        public Audio(IClient client, IRequest request) : base(client, request) { }        
+        public Audio(IClient client, IRequest request) : base(client, request) { }
 
         /// <summary>
         /// Envia um audio para um número destino
@@ -26,6 +26,8 @@ namespace TotalVoice.Api
         //    bina             = "48988888888",
         //    detecta_caixa    = false
         // };
+        /// DOCS:
+        /// https://totalvoice.github.io/totalvoice-docs/#audio
         /// 
         public string Enviar(dynamic Data)
         {

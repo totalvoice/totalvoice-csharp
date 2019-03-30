@@ -2,33 +2,49 @@
 
 namespace TotalVoice.Api
 {
-    /// <summary>
-    /// SMS Class
-    /// </summary>
-    public class Tts : Api
+    public class Composto : Api
     {
-        public const string ROTA_TTS = "tts";
+        public const string ROTA_COMPOSTO = "composto";
 
-        public Tts(IClient Client) : base(Client) { }
-        public Tts(IClient client, IRequest request) : base(client, request) { }
+        public Composto(IClient client) : base(client) { }
+        public Composto(IClient client, IRequest request) : base(client, request) { }
 
         /// <summary>
-        /// Envia um TTS (text-to-speach) para um número destino
+        /// Envia um Torpedo Composto para um número destino
         /// </summary>
         /// <param name="Data">Estrutura enviada para o Post.</param>
         /// 
         // Ex: 
         // var Data = new {
         //    numero_destino = "48988888888",
-        //    mensagem       = "Testando TTS"
+        //    dados = new[] {
+        //       new {
+        //         acao = "tts",
+        //         acao_dados = new {
+        //           mensagem = "O número digitado não consta em nosso cadastro. Por gentileza, tente novamente",
+        //           tipo_voz = "br-Ricardo" 
+        //         }
+        //       },
+        //       new {
+        //         acao = "audio",
+        //         acao_dados = new {
+        //           url_audio = "https://minhaurl.com.br/audio.mp3"
+        //         }
+        //       }
+        //    },
+        //    gravar_audio     = false,
+        //    bina             = "48988888888",
+        //    tags             = "clienteX",
+        //    detecta_caixa    = false
         // };
+        //
         /// DOCS:
-        /// https://totalvoice.github.io/totalvoice-docs/#tts-leitura-de-texto
+        /// https://totalvoice.github.io/totalvoice-docs/#composto
         ///
         public string Enviar(dynamic Data)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_COMPOSTO);
 
             _request.SetPath(path);
             _request.SetBody(Data);
@@ -36,14 +52,14 @@ namespace TotalVoice.Api
         }
 
         /// <summary>
-        /// Busca um TTS pelo seu ID
+        /// Busca um Composto pelo seu ID
         /// </summary>
-        /// <param name="Id">ID do TTS.</param>
+        /// <param name="Id">ID do Composto.</param>
         /// 
         public string Buscar(int Id)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_COMPOSTO);
             path.Add(Id);
 
             _request.SetPath(path);
@@ -51,7 +67,7 @@ namespace TotalVoice.Api
         }
 
         /// <summary>
-        /// Relatorio de envio de TTS
+        /// Relatorio de envio de Composto
         /// </summary>
         /// <param name="DataInicial">Periodo inicial para a consulta</param>
         /// <param name="DataFinal">Periodo final para a consulta.</param>
@@ -60,7 +76,7 @@ namespace TotalVoice.Api
         public string Relatorio(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
         {
             Path path = new Path();
-            path.Add(ROTA_TTS);
+            path.Add(ROTA_COMPOSTO);
             path.Add("relatorio");
 
             QueryString query = new QueryString();

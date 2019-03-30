@@ -24,7 +24,9 @@ namespace TotalVoice.Api
         //    bina_destino  = "48988888888",
         //    tags          = "clienteX"
         // };
-        /// 
+        /// DOCS:
+        /// https://totalvoice.github.io/totalvoice-docs/#chamadas
+        ///
         public string Ligar(dynamic Data)
         {
             Path path = new Path();
