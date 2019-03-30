@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TotalVoice.Api
 {
@@ -30,7 +31,7 @@ namespace TotalVoice.Api
             return _client.SendRequest(_request, "GET");
         }
 
-        public string Relatorio(DateTime DataInicial, DateTime DataFinal, dynamic Fitros = null)
+        public string Relatorio(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
         {
             Path path = new Path();
             path.Add(ROTA_SMS);
@@ -39,6 +40,11 @@ namespace TotalVoice.Api
             QueryString query = new QueryString();
             query.Add("data_inicio", DataInicial.ToString());
             query.Add("data_fim", DataFinal.ToString());
+
+            if (Filtros != null)
+            {
+                Filtros.Merge(ref query);
+            }
 
             _request.SetPath(path);
             _request.SetQuery(query);
