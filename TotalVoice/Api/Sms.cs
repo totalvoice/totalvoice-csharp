@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TotalVoice.Api
 {
+    /// <summary>
+    /// SMS Class
+    /// </summary>
     public class Sms : Api
     {
         public const string ROTA_SMS = "sms";
@@ -11,6 +13,17 @@ namespace TotalVoice.Api
         {
         }
 
+        /// <summary>
+        /// Envia um sms para um número destino
+        /// </summary>
+        /// <param name="Data">Estrutura enviada para o Post.</param>
+        /// 
+        // Ex: 
+        // var json = new {
+        //    numero_destino = "48988888888",
+        //    mensagem = "Testando SMS"
+        // };
+        /// 
         public string Enviar(dynamic Data)
         {
             Path path = new Path();
@@ -21,6 +34,11 @@ namespace TotalVoice.Api
             return _client.SendRequest(_request, "POST");
         }
 
+        /// <summary>
+        /// Busca um sms pelo seu ID
+        /// </summary>
+        /// <param name="Id">ID do SMS.</param>
+        /// 
         public string Buscar(int Id)
         {
             Path path = new Path();
@@ -31,6 +49,13 @@ namespace TotalVoice.Api
             return _client.SendRequest(_request, "GET");
         }
 
+        /// <summary>
+        /// Relatorio de envio de SMS
+        /// </summary>
+        /// <param name="DataInicial">Periodo inicial para a consulta</param>
+        /// <param name="DataFinal">Periodo final para a consulta.</param>
+        /// <param name="Filtros">Filtros adicionais que podem ser enviados.</param>
+        /// 
         public string Relatorio(DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
         {
             Path path = new Path();
