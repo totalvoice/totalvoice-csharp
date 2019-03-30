@@ -28,6 +28,7 @@ namespace TotalVoice.Api
         /// <summary>
         /// Adiciona o numero em uma Conferencia
         /// </summary>
+        /// <param name="Id">ID da conferencia.</param> 
         // Ex: 
         // var Data = new {
         //    numero = "48988888888",
