@@ -7,26 +7,26 @@ namespace TotalVoice
 {
     public class QueryString
     {
-        private Dictionary<string, dynamic> Query;
+        private Dictionary<string, dynamic> _query;
 
         public QueryString()
         {
-            Query = new Dictionary<string, dynamic>();
+            _query = new Dictionary<string, dynamic>();
         }
 
         public void Add(string Key, dynamic Value)
         {
-            Query.Add(Key, Value);
+            _query.Add(Key, Value);
         }
 
         public bool IsEmpty()
         {
-            return Query.Count() == 0;
+            return _query.Count() == 0;
         }
 
         public string Build()
         {
-            return "?" + HttpUtility.UrlEncode(string.Join("&", Query.Select(Item => string.Format("{0}={1}", Item.Key, Item.Value))));
+            return "?" + HttpUtility.UrlEncode(string.Join("&", _query.Select(Item => string.Format("{0}={1}", Item.Key, Item.Value))));
         }
     }
 }

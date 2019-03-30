@@ -5,26 +5,26 @@ namespace TotalVoice
 {
     public class Filter
     {
-        private Dictionary<string, dynamic> filters;
+        private Dictionary<string, dynamic> _filters;
 
         public Filter()
         {
-            filters = new Dictionary<string, dynamic>();
+            _filters = new Dictionary<string, dynamic>();
         }
 
         public void Add(string Key, dynamic Value)
         {
-            filters.Add(Key, Value);
+            _filters.Add(Key, Value);
         }
 
         public bool IsEmpty()
         {
-            return filters.Count() == 0;
+            return _filters.Count() == 0;
         }
         
         public void Merge(ref QueryString Query)
         {
-            foreach (KeyValuePair<string, dynamic> entry in filters)
+            foreach (KeyValuePair<string, dynamic> entry in _filters)
             {
                 Query.Add(entry.Key, entry.Value);
             }

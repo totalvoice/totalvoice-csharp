@@ -4,28 +4,28 @@ namespace TotalVoice
 {
     public class Request : IRequest
     {
-        Path Path;
-        QueryString Query;
-        string Body;
+        Path _path;
+        QueryString _query;
+        string _body;
 
         public Request() {}
         
         public string GetPathString()
         {
-            if (Path == null)
+            if (_path == null)
             {
                 return "";
             }
-            return Path.GetPathString();
+            return _path.GetPathString();
         }
         
         public string GetQueryString()
         {
-            if (Query == null || Query.IsEmpty())
+            if (_query == null || _query.IsEmpty())
             {
                 return "";
             }
-            return Query.Build();
+            return _query.Build();
         }
 
         public string GetURL()
@@ -35,16 +35,16 @@ namespace TotalVoice
 
         public string GetBody()
         {
-            return Body;
+            return _body;
         }
 
-        public void SetPath(Path path) => Path = path;
+        public void SetPath(Path path) => _path = path;
 
-        public void SetQuery(QueryString query) => Query = query;
+        public void SetQuery(QueryString query) => _query = query;
 
         public void SetBody(dynamic data)
         {
-            Body = JsonConvert.SerializeObject(data);
+            _body = JsonConvert.SerializeObject(data);
         }
     }
 }
