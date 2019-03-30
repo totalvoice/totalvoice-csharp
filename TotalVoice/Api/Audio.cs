@@ -40,7 +40,7 @@ namespace TotalVoice.Api
         /// <summary>
         /// Busca um Audio pelo seu ID
         /// </summary>
-        /// <param name="Id">ID do TTS.</param>
+        /// <param name="Id">ID do Audio.</param>
         /// 
         public string Buscar(int Id)
         {
