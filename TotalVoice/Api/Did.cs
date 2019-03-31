@@ -12,8 +12,6 @@ namespace TotalVoice.Api
     public class Did : Api
     {
         public const string ROTA_DID = "did";
-        public const string ROTA_DID_ESTOQUE = "conferencia";
-        public const string ROTA_DID_CHAMADA = "conferencia";
 
         public Did(IClient client) : base(client) { }
         public Did(IClient client, IRequest request) : base(client, request) { }
