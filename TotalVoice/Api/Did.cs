@@ -134,5 +134,35 @@ namespace TotalVoice.Api
 
             return _client.SendRequest(_request, GET);
         }
+
+        /// <summary>
+        /// Relatório de todas chamadas recebida no número específico
+        /// </summary>
+        /// <param name="Id">Id do DID</param>
+        /// <param name="DataInicial">Periodo inicial para a consulta</param>
+        /// <param name="DataFinal">Periodo final para a consulta.</param>
+        /// <param name="Filtros">Filtros adicionais que podem ser enviados.</param>
+        /// 
+        public string Relatorio(int Id, DateTime DataInicial, DateTime DataFinal, Filter Filtros = null)
+        {
+            Path path = new Path();
+            path.Add(ROTA_DID);
+            path.Add(Id);
+            path.Add("relatorio");
+
+            QueryString query = new QueryString();
+            query.Add("data_inicio", DataInicial.ToString());
+            query.Add("data_fim", DataFinal.ToString());
+
+            if (Filtros != null)
+            {
+                Filtros.Merge(ref query);
+            }
+
+            _request.SetPath(path);
+            _request.SetQuery(query);
+
+            return _client.SendRequest(_request, GET);
+        }
     }
 }
