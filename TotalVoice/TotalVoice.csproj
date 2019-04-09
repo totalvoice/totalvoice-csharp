@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>TotalVoice</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>dilowagner</Authors>
+    <Company>Totalvoice</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>Client API TotalVoice</Title>
+    <Description>Client .NET para API TotalVoice</Description>
+    <RepositoryUrl>https://github.com/totalvoice/totalvoice-csharp</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
