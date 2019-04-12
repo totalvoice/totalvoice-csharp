@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>TotalVoice</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>dilowagner</Authors>
     <Company>Totalvoice</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
