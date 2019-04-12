@@ -36,12 +36,12 @@ namespace TotalVoice.Api
         }
 
         /// <summary>
-        /// Busca os dados da verificacao
+        /// Consulta os dados da verificacao
         /// </summary>
         /// <param name="Id">ID</param>
         /// <param name="Pin">PIN validado.</param>
         /// 
-        public string Buscar(int Id, string Pin)
+        public string Consultar(int Id, string Pin)
         {
             Path path = new Path();
             path.Add(ROTA_VERIFICACAO);
