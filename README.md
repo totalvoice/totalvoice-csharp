@@ -35,6 +35,29 @@ ou .NET CLI
 dotnet add package TotalVoice --version 1.0.1
 ```
 
+A seguir alguns exemplos de como pode ser utilizada esta biblioteca.
+
+> ##### Realizar uma chamada telefônica entre dois números: A e B
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            Chamada chamada = new Chamada(client);
+            var json = new {
+                numero_origem  = "48988888888",
+                numero_destino = "48999999999"
+            };
+            string response = chamada.Ligar(json);
+            System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
 
 > ### Licença
 
