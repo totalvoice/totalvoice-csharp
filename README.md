@@ -59,6 +59,24 @@ namespace Teste
 }
 ```
 
+> ##### Consulta de chamada pelo ID
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            Chamada chamada = new Chamada(client);
+            string response = chamada.Buscar(123);
+            System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
+
 > ##### Enviar um SMS
 
 ```csharp
