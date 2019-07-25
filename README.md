@@ -121,6 +121,30 @@ namespace Teste
 }
 ```
 
+> ##### Validacao de Numero
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            ValidaNumero validacao = new ValidaNumero(client);
+            var json = new {
+                numero_destino = "48999999999",
+                gravar_audio   = true,
+                bina           = 48808880804,
+                max_tentativas = 1
+            };
+            string response = validacao.Enviar(json);
+            System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
+
 > ### Licença
 
 Esta biblioteca segue os termos de uso da [MIT](https://github.com/totalvoice/totalvoice-csharp/blob/master/LICENSE)
