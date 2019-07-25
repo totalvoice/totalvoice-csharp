@@ -99,6 +99,28 @@ namespace Teste
 }
 ```
 
+> ##### Enviar um TTS
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            Tts tts = new Tts(client);
+            var json = new {
+                numero_destino = "48999999999",
+                mensagem = "Mensagem de TTS"
+            };
+            string response = tts.Enviar(json);
+            System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
+
 > ### Licença
 
 Esta biblioteca segue os termos de uso da [MIT](https://github.com/totalvoice/totalvoice-csharp/blob/master/LICENSE)
