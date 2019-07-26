@@ -135,7 +135,7 @@ namespace Teste
             var json = new {
                 numero_destino = "48999999999",
                 gravar_audio   = true,
-                bina           = 48808880804,
+                bina           = "48808880804",
                 max_tentativas = 1
             };
             string response = validacao.Enviar(json);
