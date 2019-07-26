@@ -145,6 +145,46 @@ namespace Teste
 }
 ```
 
+> ##### Enviar um Composto
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            Composto composto = new Composto(client);
+            var json = new {
+              numero_destino = "48988888888",
+              dados = new[] {
+                 new {
+                   acao = "tts",
+                   acao_dados = new {
+                     mensagem = "O número digitado não consta em nosso cadastro. Por gentileza, tente novamente",
+                     tipo_voz = "br-Ricardo" 
+                   }
+                 },
+                 new {
+                   acao = "audio",
+                   acao_dados = new {
+                     url_audio = "https://minhaurl.com.br/audio.mp3"
+                   }
+                 }
+              },
+              gravar_audio     = false,
+              bina             = "48988888888",
+              tags             = "clienteX",
+              detecta_caixa    = false
+           };
+           string response = composto.Enviar(json);
+           System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
+
 > ### Licença
 
 Esta biblioteca segue os termos de uso da [MIT](https://github.com/totalvoice/totalvoice-csharp/blob/master/LICENSE)
