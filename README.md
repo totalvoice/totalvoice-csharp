@@ -99,6 +99,24 @@ namespace Teste
 }
 ```
 
+> ##### Buscar os dados de um SMS pelo ID
+
+```csharp
+namespace Teste
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
+            Sms sms = new Sms(client);
+            string response = sms.Buscar(123);
+            System.Diagnostics.Debug.WriteLine(response);
+        }
+    }
+}
+```
+
 > ##### Enviar um TTS
 
 ```csharp
