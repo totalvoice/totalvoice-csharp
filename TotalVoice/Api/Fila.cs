@@ -16,6 +16,19 @@ namespace TotalVoice.Api
         public Fila(IClient client, IRequest request) : base(client, request) { }
 
         /// <summary>
+        /// Lista as filas em sua Conta
+        /// </summary>
+        /// 
+        public string Listar()
+        {
+            Path path = new Path();
+            path.Add(ROTA_FILA);
+
+            _request.SetPath(path);
+            return _client.SendRequest(_request, GET);
+        }
+
+        /// <summary>
         /// Cria um Fila de Atendimento
         /// </summary>
         /// <param name="Data">Estrutura enviada para o Post.</param>
