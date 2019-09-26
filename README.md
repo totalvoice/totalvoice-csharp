@@ -14,7 +14,7 @@ Client C# para a API da TotalVoice
 
 > ### Pré requisitos
 
-- .NET 4.5
+- .NET Framework 4.6.1 ou .NET Core 2.0
 - Nuget
 
 > ### Utilização
