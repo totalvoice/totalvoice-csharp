@@ -179,7 +179,7 @@ namespace TotalVoice.Api
         /// <param name="Nome">Nome do webhook a ser criado ou atualizado.</param>
         /// <param name="Url">URL do Webhook.</param>
         /// 
-        public string SalvaWebhookDefault(string Nome, string Url)
+        public string SalvarWebhookDefault(string Nome, string Url)
         {
             Path path = new Path();
             path.Add(ROTA_CONTA);
