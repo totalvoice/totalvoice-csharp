@@ -122,23 +122,5 @@ namespace TotalVoice.Api
 
             return _client.SendRequest(_request, GET);
         }
-
-        /// <summary>
-        /// Credita valor de bônus em uma conta filha
-        /// </summary>
-        /// <param name="Id">Id da conta</param>
-        /// <param name="Data">Estrutura enviada para o Post.</param>
-        /// 
-        public string RecargaBonus(int Id, dynamic Data)
-        {
-            Path path = new Path();
-            path.Add(ROTA_CONTA);
-            path.Add(Id);
-            path.Add("bonus");
-
-            _request.SetPath(path);
-            _request.SetBody(Data);
-            return _client.SendRequest(_request, POST);
-        }
     }
 }
