@@ -10,6 +10,7 @@ namespace TotalVoice.Api
     public class Ramal : Api
     {
         public const string ROTA_RAMAL = "ramal";
+        public const string ROTA_FILA = "fila";
 
         public Ramal(IClient client) : base(client) { }
         public Ramal(IClient client, IRequest request) : base(client, request) { }
@@ -121,5 +122,22 @@ namespace TotalVoice.Api
 
             return _client.SendRequest(_request, GET);
         }
+        public string AtualizarRamalFila(int Id, dynamic Data)
+        {
+            Path path = new Path();
+            path.Add(ROTA_RAMAL);
+            path.Add(Id);
+            path.Add(ROTA_FILA);
+
+            _request.SetPath(path);
+            _request.SetBody(Data);
+            return _client.SendRequest(_request, PUT);
+        }
+
+        /// <summary>
+        /// Atualiza um ramal na fila
+        /// </summary>
+        /// <param name="Id">Id do Ramal</param>
+        /// 
     }
 }
