@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TotalVoice</id>
+    <version>1.2.0</version>
+    <title>Client API TotalVoice</title>
+    <authors>dilowagner</authors>
+    <owners>dilowagner</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Client .NET para API TotalVoice</description>
+    <repository url="https://github.com/totalvoice/totalvoice-csharp" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
