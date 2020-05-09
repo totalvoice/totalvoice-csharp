@@ -26,7 +26,7 @@ namespace TotalVoice
 
         public string Build()
         {
-            return "?" + HttpUtility.UrlEncode(string.Join("&", _query.Select(Item => string.Format("{0}={1}", Item.Key, Item.Value))));
+            return "?" + string.Join("&", _query.Select(Item => string.Format("{0}={1}", Item.Key, HttpUtility.UrlEncode(Item.Value.ToString()))));
         }
     }
 }
