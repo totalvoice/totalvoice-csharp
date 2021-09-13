@@ -36,7 +36,7 @@ namespace TotalVoice
             request.Method = method;
             request.ContentType = "application/json";
             request.Headers.Add("Access-Token", AccessToken);
-            request.Headers.Add("User-Agent", "lib-c#/1.3.0");
+            request.Headers.Add("User-Agent", "lib-csharp/1.3.0");
             if (req.GetBody() != null && (method == "POST" || method == "PUT"))
             {
                 byte[] bytes = System.Text.Encoding.UTF8.GetBytes(req.GetBody());
