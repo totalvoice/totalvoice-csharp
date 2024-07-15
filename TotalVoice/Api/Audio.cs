@@ -19,11 +19,11 @@ namespace TotalVoice.Api
         /// 
         // Ex: 
         // var Data = new {
-        //    numero_destino   = "48988888888",
+        //    numero_destino   = "+5510999999999",
         //    url_audio        = "http://foooo.bar/audio.mp3",
         //    resposta_usuario = false,
         //    gravar_audio     = false,
-        //    bina             = "48988888888",
+        //    bina             = "+5510888888888",
         //    detecta_caixa    = false
         // };
         /// DOCS:

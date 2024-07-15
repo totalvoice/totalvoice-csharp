@@ -16,7 +16,7 @@ namespace TotalVoice.Api
         /// 
         // Ex: 
         // var Data = new {
-        //    numero_destino = "48988888888",
+        //    numero_destino = "+5510999999999",
         //    dados = new[] {
         //       new {
         //         acao = "tts",
@@ -33,7 +33,7 @@ namespace TotalVoice.Api
         //       }
         //    },
         //    gravar_audio     = false,
-        //    bina             = "48988888888",
+        //    bina             = "+5510888888888",
         //    tags             = "clienteX",
         //    detecta_caixa    = false
         // };

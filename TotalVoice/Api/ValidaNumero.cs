@@ -20,9 +20,9 @@ namespace TotalVoice.Api
         /// 
         // Ex: 
         // var Data = new {
-        //    numero_destino = "48988888888",
+        //    numero_destino = "+5510999999999",
         //    gravar_audio   = true,
-        //    bina           = 48808880804,
+        //    bina           = +5510888888888,
         //    max_tentativas = 1
         // };
         /// 
