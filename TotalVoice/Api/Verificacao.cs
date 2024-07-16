@@ -19,7 +19,7 @@ namespace TotalVoice.Api
         /// 
         // Ex: 
         // var Data = new {
-        //    numero_destino = "48988888888",
+        //    numero_destino = "+5510999999999",
         //    nome_produto   = "Meu teste",
         //    tamanho        = 4,
         //    tts            = false

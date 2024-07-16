@@ -49,8 +49,8 @@ namespace Teste
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Chamada chamada = new Chamada(client);
             var json = new {
-                numero_origem  = "48988888888",
-                numero_destino = "48999999999"
+                numero_origem  = "+5510888888888",
+                numero_destino = "+5510999999999"
             };
             string response = chamada.Ligar(json);
             System.Diagnostics.Debug.WriteLine(response);
@@ -89,7 +89,7 @@ namespace Teste
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Sms sms = new Sms(client);
             var json = new {
-                numero_destino = "48999999999",
+                numero_destino = "+5510999999999",
                 mensagem = "Mensagem de teste"
             };
             string response = sms.Enviar(json);
@@ -129,7 +129,7 @@ namespace Teste
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Tts tts = new Tts(client);
             var json = new {
-                numero_destino = "48999999999",
+                numero_destino = "+5510999999999",
                 mensagem = "Mensagem de TTS"
             };
             string response = tts.Enviar(json);
@@ -151,9 +151,9 @@ namespace Teste
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             ValidaNumero validacao = new ValidaNumero(client);
             var json = new {
-                numero_destino = "48999999999",
+                numero_destino = "+5510999999999",
                 gravar_audio   = true,
-                bina           = "48808880804",
+                bina           = "+5510888888888",
                 max_tentativas = 1
             };
             string response = validacao.Enviar(json);
@@ -175,7 +175,7 @@ namespace Teste
             TotalVoiceClient client = new TotalVoiceClient("access-token");
             Composto composto = new Composto(client);
             var json = new {
-              numero_destino = "48988888888",
+              numero_destino = "+5510999999999",
               dados = new[] {
                  new {
                    acao = "tts",
@@ -192,7 +192,7 @@ namespace Teste
                  }
               },
               gravar_audio     = false,
-              bina             = "48988888888",
+              bina             = "+5510888888888",
               tags             = "clienteX",
               detecta_caixa    = false
            };

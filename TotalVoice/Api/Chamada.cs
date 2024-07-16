@@ -16,12 +16,12 @@ namespace TotalVoice.Api
         /// 
         // Ex: 
         // var Data = new {
-        //    numero_origem = "48988888888",
-        //    numero_destino= "48988888888",
+        //    numero_origem = "+5510999999999",
+        //    numero_destino= "+5510999999999",
         //    data_criacao  = "2017-03-30T17:17:14-03:00",
         //    gravar_audio  = false,
-        //    bina_origem   = "48988888888",
-        //    bina_destino  = "48988888888",
+        //    bina_origem   = "+5510888888888",
+        //    bina_destino  = "+5510888888888",
         //    tags          = "clienteX"
         // };
         /// DOCS:

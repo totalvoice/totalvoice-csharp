@@ -34,9 +34,9 @@ namespace TotalVoice.Api
         /// <param name="Id">ID da conferencia.</param> 
         // Ex: 
         // var Data = new {
-        //    numero = "48988888888",
+        //    numero = "+5510999999999",
         //    gravar_audio = false,
-        //    bina = "48988888888"
+        //    bina = "+5510888888888"
         // };
         /// DOCS:
         /// https://totalvoice.github.io/totalvoice-docs/#conferencias
